@@ -23,9 +23,10 @@ document.getElementById('employee-count').addEventListener('keyup', function(eve
     if (inputValue < 0){
         event.target.classList.add('error');
         event.target.nextElementSibling.classList.add('show')
-    }else 
-    event.target.classList.remove('error');
-    event.target.nextElementSibling.classList.remove('show')
+    }else {
+        event.target.classList.remove('error');
+        event.target.nextElementSibling.classList.remove('show')
+    }
 });
 
 document.getElementById('loaves-per-employee').addEventListener('keyup', function(klaida){
@@ -38,6 +39,19 @@ document.getElementById('loaves-per-employee').addEventListener('keyup', functio
     }else {
         klaida.target.classList.remove('error');
         klaida.target.nextElementSibling.classList.remove('show');
+    }
+})
+
+document.getElementById('order-count').addEventListener('keyup', function(bug){
+
+    let text = bug.target.valueAsNumber;
+
+    if( text < 0){
+        bug.target.classList.add('error');
+        bug.target.nextElementSibling.classList.add('show')
+    }else {
+        bug.target.classList.remove('error');
+        bug.target.nextElementSibling.classList.remove('show');
     }
 })
 
