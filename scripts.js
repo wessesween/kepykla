@@ -1,36 +1,52 @@
-let calculateButton = document.getElementById('calculate')
-calculateButton.addEventListener('click', function() {
-    console.log('clicked')
-    let employeeCount = document.getElementById('employee-count').valueAsNumber
-    let loavesPerEmployee = document.getElementById('loaves-per-employee').valueAsNumber
-    let orderCount = document.getElementById('order-count').valueAsNumber
+let calculateButton = document.getElementById('calculate');
 
-    let kepyklaTotal = employeeCount * loavesPerEmployee
-    let arPavyks = kepyklaTotal >= orderCount
+calculateButton.addEventListener('click', function(){
+    // console.log('clicked')
+    let employeesCount = document.getElementById('employee-count').valueAsNumber;
+    let employeeMakesPerDay = document.getElementById('loaves-per-employee').valueAsNumber;
+    let orderCount = document.getElementById('order-count').valueAsNumber;
 
-    let results = document.getElementById('results')
-    results.innerHTML = `<p><strong>Kepykla per dieną spės pagaminti:</strong> ${kepyklaTotal} kepalų</p>`
-    results.innerHTML += `<p><strong>Reikia pagaminti:</strong> ${orderCount} kepalų</p>`
-    results.innerHTML += `<p><strong>Ar spės pagaminti?</strong> ${arPavyks ? 'Taip' : 'Ne'}</p>`
-})
+    let total = employeesCount * employeeMakesPerDay;
+    let arspes = total >= orderCount;
 
-document.getElementById('employee-count').addEventListener('keyup', function(event) {
-    let inputValue = event.target.valueAsNumber
-    if(inputValue < 0) {
-        event.target.classList.add('error')
+    let results = document.getElementById('results');
+    results.innerHTML = `<p><strong>Kepykla per diena spes pagaminti: </strong>${total} kepalu</p>`;
+    results.innerHTML += `<p><strong>Jai reikia speti pagaminti:</strong> ${orderCount} </p>`;
+    results.innerHTML += `<p><strong>Ar spes pagaminti?</strong> ${arspes ? 'taip' : 'ne'}</p>`
+
+});
+
+document.getElementById('employee-count').addEventListener('keyup', function(event){
+    
+    let inputValue = event.target.valueAsNumber;
+    
+    if (inputValue < 0){
+        event.target.classList.add('error');
         event.target.nextElementSibling.classList.add('show')
-    } else {
-        event.target.classList.remove('error')
-        event.target.nextElementSibling.classList.remove('show')
-    }
-})
+    }else 
+    event.target.classList.remove('error');
+    event.target.nextElementSibling.classList.remove('show')
+});
 
-document.getElementById('reset').addEventListener('click', function() {
-    document.getElementById('employee-count').valueAsNumber = 0
-    document.getElementById('loaves-per-employee').valueAsNumber = 0
-    document.getElementById('order-count').valueAsNumber = 0
-    document.getElementById('results').innerHTML = '<p>Kol kas nieko nėra.</p>'
-})
+
+document.getElementById('reset').addEventListener('click', function(){
+    document.getElementById('employee-count').value = 0;
+    document.getElementById('loaves-per-employee').value = 0;
+    document.getElementById('order-count').value = 0;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* INSTRUKCIJOS:
 Papildykite projektą:
