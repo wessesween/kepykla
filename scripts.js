@@ -16,44 +16,63 @@ calculateButton.addEventListener('click', function(){
 
 });
 
-document.getElementById('employee-count').addEventListener('keyup', function(event){
+// document.getElementById('employee-count').addEventListener('keyup', function(event){
     
-    let inputValue = event.target.valueAsNumber;
+//     let inputValue = event.target.valueAsNumber;
     
-    if (inputValue < 0){
-        event.target.classList.add('error');
-        event.target.nextElementSibling.classList.add('show')
-    }else {
-        event.target.classList.remove('error');
-        event.target.nextElementSibling.classList.remove('show')
-    }
-});
+//     if (inputValue < 0){
+//         event.target.classList.add('error');
+//         event.target.nextElementSibling.classList.add('show')
+//     }else {
+//         event.target.classList.remove('error');
+//         event.target.nextElementSibling.classList.remove('show')
+//     }
+// });
 
-document.getElementById('loaves-per-employee').addEventListener('keyup', function(klaida){
+// document.getElementById('loaves-per-employee').addEventListener('keyup', function(klaida){
 
-    let inPut = klaida.target.valueAsNumber;
+//     let inPut = klaida.target.valueAsNumber;
 
-    if(inPut < 0){
-        klaida.target.classList.add('error');
-        klaida.target.nextElementSibling.classList.add('show')
-    }else {
-        klaida.target.classList.remove('error');
-        klaida.target.nextElementSibling.classList.remove('show');
-    }
-})
+//     if(inPut < 0){
+//         klaida.target.classList.add('error');
+//         klaida.target.nextElementSibling.classList.add('show')
+//     }else {
+//         klaida.target.classList.remove('error');
+//         klaida.target.nextElementSibling.classList.remove('show');
+//     }
+// });
 
-document.getElementById('order-count').addEventListener('keyup', function(bug){
+// document.getElementById('order-count').addEventListener('keyup', function(bug){
 
-    let text = bug.target.valueAsNumber;
+//     let text = bug.target.valueAsNumber;
 
-    if( text < 0){
-        bug.target.classList.add('error');
-        bug.target.nextElementSibling.classList.add('show')
-    }else {
-        bug.target.classList.remove('error');
-        bug.target.nextElementSibling.classList.remove('show');
-    }
-})
+//     if( text < 0){
+//         bug.target.classList.add('error');
+//         bug.target.nextElementSibling.classList.add('show')
+//     }else {
+//         bug.target.classList.remove('error');
+//         bug.target.nextElementSibling.classList.remove('show');
+//     }
+// });
+
+function viskasviename(input){
+    document.getElementById(input).addEventListener('keyup', function(event){
+
+        let inputVal = event.target.valueAsNumber;
+
+        if (inputVal < 0) {
+            event.target.classList.add('error');
+            event.target.nextElementSibling.classList.add('show');
+        } else {
+            event.target.classList.remove('error');
+            event.target.nextElementSibling.classList.remove('show');
+        }
+    });
+}
+
+viskasviename('employee-count');
+viskasviename('loaves-per-employee');
+viskasviename('order-count');
 
 
 document.getElementById('reset').addEventListener('click', function(){
