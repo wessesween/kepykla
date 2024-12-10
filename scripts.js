@@ -28,6 +28,19 @@ document.getElementById('employee-count').addEventListener('keyup', function(eve
     event.target.nextElementSibling.classList.remove('show')
 });
 
+document.getElementById('loaves-per-employee').addEventListener('keyup', function(klaida){
+
+    let inPut = klaida.target.valueAsNumber;
+
+    if(inPut < 0){
+        klaida.target.classList.add('error');
+        klaida.target.nextElementSibling.classList.add('show')
+    }else {
+        klaida.target.classList.remove('error');
+        klaida.target.nextElementSibling.classList.remove('show');
+    }
+})
+
 
 document.getElementById('reset').addEventListener('click', function(){
     document.getElementById('employee-count').value = 0;
