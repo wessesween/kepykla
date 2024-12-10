@@ -8,11 +8,13 @@ calculateButton.addEventListener('click', function(){
 
     let total = employeesCount * employeeMakesPerDay;
     let arspes = total >= orderCount;
+    let likutis = total - orderCount;
 
     let results = document.getElementById('results');
     results.innerHTML = `<p><strong>Kepykla per diena spes pagaminti: </strong>${total} kepalu</p>`;
     results.innerHTML += `<p><strong>Jai reikia speti pagaminti:</strong> ${orderCount} </p>`;
-    results.innerHTML += `<p><strong>Ar spes pagaminti?</strong> ${arspes ? 'taip' : 'ne'}</p>`
+    results.innerHTML += `<p><strong>Ar spes pagaminti?</strong> ${arspes ? 'taip' : 'ne'}</p>`;
+    results.innerHTML += `<p><strong>Kepalu likutis:</strong> ${likutis > 0 ? likutis:0} </p>`
 
 });
 
@@ -80,14 +82,6 @@ document.getElementById('reset').addEventListener('click', function(){
     document.getElementById('loaves-per-employee').value = 0;
     document.getElementById('order-count').value = 0;
 });
-
-
-
-
-
-
-
-
 
 
 
